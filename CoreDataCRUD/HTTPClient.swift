@@ -47,14 +47,14 @@ class HTTPClient {
         for (key, value) in params {
             if counter != 0 {
                 if params.count > 1{
-                    queryString.append("&")
+                    queryString.append("&" as Character)
                 }
             } else {
-                queryString.append("?")
+                queryString.append("?" as Character)
             }
             
    
-            queryString.append("\(key)=\(value)")
+            queryString = queryString + String("\(key)=\(value)")
             ++counter
         }
         
